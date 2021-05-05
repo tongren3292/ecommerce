@@ -63,6 +63,7 @@ def store(request):
 
     myFilter = OrderFilter(request.GET, queryset=products)
     products = myFilter.qs
+
     context = {'products': products, 'cartItems': cartItems, 'myFilter': myFilter}
     return render(request, 'store/store.html', context)
 
